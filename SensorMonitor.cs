@@ -67,7 +67,7 @@ namespace CampusSafetyHub
                 catch (Exception ex)
                 {
                     // Một observer bị lỗi không ngăn các observer khác nhận sự kiện
-                    Console.WriteLine($"[OBSERVER ERROR] {ex.Message}");
+                    Console.WriteLine($"[OBSERVER ERROR] {observer.GetType().Name}: {ex.Message}");
                 }
             }
         }

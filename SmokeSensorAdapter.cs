@@ -20,7 +20,8 @@ namespace CampusSafetyHub
 
         public double ReadValue()
         {
-            return legacy.GetSmokeLevel() / 10.0;
+            return Math.Clamp(
+                legacy.GetSmokeLevel() / 10.0, 0.0, 100.0);
         }
 
         public string GetUnit() => "% smoke";
