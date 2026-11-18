@@ -31,9 +31,38 @@ namespace CampusSafetyHub
             }
 
             Console.WriteLine("[MEDIATOR] Kich hoat ung pho CRITICAL.");
-            alarm.Activate();
-            door.Unlock();
-            ventilation.Stop();
+            // Xử lý Alarm
+            try
+            {
+                alarm.Activate();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(
+                    $"[DEVICE ERROR] Alarm: {ex.Message}");
+            }
+
+            // Xử lý Door
+            try
+            {
+                door.Unlock();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(
+                    $"[DEVICE ERROR] DoorController: {ex.Message}");
+            }
+
+            // Xử lý Ventilation
+            try
+            {
+                ventilation.Stop();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(
+                    $"[DEVICE ERROR] VentilationController: {ex.Message}");
+            }
         }
     }
 }

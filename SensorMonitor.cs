@@ -35,8 +35,8 @@ namespace CampusSafetyHub
             double value = sensor.ReadValue();
             string? severity = value switch
             {
-                >= 70 => "CRITICAL",
-                >= 50 => "WARNING",
+                >= 70 => AlertSeverity.Critical,
+                >= 50 => AlertSeverity.Warning,
                 _ => null
             };
 

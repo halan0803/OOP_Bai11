@@ -20,7 +20,7 @@ namespace CampusSafetyHub
 
         public void Update(AlertEvent alertEvent)
         {
-            if (alertEvent.Severity == "CRITICAL")
+            if (alertEvent.Severity == AlertSeverity.Critical)
             {
                 mediator.HandleEmergency(alertEvent);
             }
