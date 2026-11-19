@@ -25,7 +25,7 @@ namespace CampusSafetyHub
 
         public void HandleEmergency(AlertEvent alertEvent)
         {
-            if (alertEvent.Severity != "CRITICAL")
+            if (alertEvent.Severity != AlertSeverity.Critical)
             {
                 return;
             }
